@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 3-Month Anniversary!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      color: #333;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      max-width: 600px;
+      width: 90%;
+    }
+    h1, h2 {
+      font-size: 2rem;
+      color: #6c63ff;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+    .message {
+      font-weight: 600;
+      color: #ff6b6b;
+      margin: 20px 0;
+    }
+    button {
+      margin-top: 15px;
+      background: #6c63ff;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+    }
+    .yes-btn:hover {
+      background: #4f4acb;
+    }
+    .no-btn {
+      background: #ff6b6b;
+      position: relative;
+    }
+    .gif {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 15px;
+      margin: 20px auto;
+    }
+    .final-image {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      margin: 20px auto;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    #final-message {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Content -->
+  <div class="container" id="main-content">
+    <h1>Happy 3-Month Anniversary! 💖</h1>
+    <p>These three months with you have been nothing short of amazing. From the fun adventures like bowling to our peaceful walks doing absolutely nothing — every single moment has been unforgettable.</p>
+    <p>Being by your side brings me endless joy, and the last month has been especially wonderful with all the new, beautiful memories we created.</p>
+    <p class="message">I love you so much, and I look forward to many more months and years of happiness together!</p>
+    <button onclick="showProposal()">Click Me ❤</button>
+  </div>
+
+  <!-- Proposal Section -->
+  <div class="container" id="proposal" style="display: none;">
+    <h2>Will You Keep Being Mine? 🐽</h2>
+    <p>I’ve been thinking… since you’ve somehow made it this far without running for the hills, I guess it’s time to lock you down again. So, what do you say—will you continue putting up with me? You’re already stuck with me anyway</p>
+    <img class="gif" src="https://i.giphy.com/media/3OhXBaoR1tVPW/giphy.gif" alt="Romantic GIF">
+    <div class="btn-group">
+      <button class="yes-btn" onclick="showFinalMessage()">Yes 🫦</button>
+      <button class="no-btn" onmouseover="moveButton()">No 🙄</button>
+    </div>
+    <div id="final-message" style="display: none;">
+      <!-- Corrected Image URL -->
+      <img class="final-image" src="https://i.imgur.com/RJiDih3.jpg" alt="Our Special Moment">
+      <p class="message">You make every day brighter and more beautiful. Being with you is the greatest joy of my life. Happy 3 months, my love! ❤</p>
+      <button onclick="location.reload()">Back to Start</button>
+    </div>
+  </div>
+
+  <script>
+    // Show proposal section
+    function showProposal() {
+      document.getElementById('main-content').style.display = 'none';
+      document.getElementById('proposal').style.display = 'block';
+    }
+
+    // Show final message
+    function showFinalMessage() {
+      document.querySelector('#proposal h2').style.display = 'none';
+      document.querySelector('#proposal p').style.display = 'none';
+      document.querySelector('.gif').style.display = 'none';
+      document.querySelector('.btn-group').style.display = 'none';
+      document.getElementById('final-message').style.display = 'block';
+    }
+
+    // Move No button
+    function moveButton() {
+      const noBtn = document.querySelector('.no-btn');
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.position = 'absolute';
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    }
+  </script>
+</body>
+</html>
